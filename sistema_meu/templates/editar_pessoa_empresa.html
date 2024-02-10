@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Pessoa ou Empresa</title>
+    <!-- Adicione os estilos CSS necessários aqui -->
+    <link rel="stylesheet" href="seu_estilo.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Editar Informações</h1>
+        <form method="POST" action="{{ url_for('editar_pessoa_empresa', id=pessoa_empresa[0]) }}">
+            <!-- Exemplo: -->
+            <label for="nome_pessoas_empresas">Nome:</label>
+            <input type="text" name="nome_pessoas_empresas" value="{{ pessoa_empresa[1] }}" required>
+
+            <label for="tipo_pessoas_empresas">Tipo:</label>
+            <input type="text" name="tipo_pessoas_empresas" value="{{ pessoa_empresa[2] }}" required>
+
+            <label for="nome_social">Nome Social:</label>
+            <input type="text" name="nome_social" value="{{ pessoa_empresa[3] }}">
+
+            <!-- Adicione os demais campos do formulário conforme necessário -->
+
+            <label for="observacao_pessoas_empresas">Observação:</label>
+            <textarea name="observacao_pessoas_empresas">{{ pessoa_empresa[13] }}</textarea>
+
+            <button type="submit">Salvar Alterações</button>
+        </form>
+    </div>
+</body>
+</html>

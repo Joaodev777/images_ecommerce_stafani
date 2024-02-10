@@ -1,0 +1,31 @@
+Processos do 'sistema_meu'
+
+____________________________
+Dashboard:
+	GRAFICO DE RENDIMENTO MENSAL
+	GRAFICO DE CONTINUIDADE DO JEITO QUE ESTA(VAI FALAR COMO VOCE VAI ESTAR SE CONTINUAR DESSE JEITO EM VALOR)
+	GRAFICO DE VENDA DE PRODUTO
+	GRAFICO DE INVESTIMENTOS
+
+ESTOQUE:
+
+PESSOAS E EMPRESAS:
+       id INTEGER PRIMARY KEY,
+        nome_pessoas_empresas TEXT,
+        tipo_pessoas_empresas TEXT,
+        nome_social TEXT,
+        cpf_cnpj TEXT,
+        classificacao_pessoas_empresas TEXT,
+        numero_1 TEXT,
+        numero_2 TEXT,
+        numero_3 TEXT,
+        email_pessoas_empresas TEXT,
+        cep_pessoas_empresas TEXT,
+        rua_pessoas_empresas TEXT,
+        bairro_pessoas_empresas TEXT,
+        observacao_pessoas_empresas TEXT
+
+
+
+TRANSACOES:
+ 

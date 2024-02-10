@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de Compras</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+        .card {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 10px;
+            width: 300px;
+        }
+        .card img {
+            display: block;
+            margin: 0 auto;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .card-title {
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        .card-text {
+            margin-bottom: 10px;
+        }
+        .card-price {
+            color: #007bff;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Carrinho de Compras</h1>
+    <div class="container">
+        {% if carrinho_compras %}
+            {% for item in carrinho_compras %}
+                <div class="card">
+
+                    <div class="card-title">{{ item[1] }}</div>
+                    <div class="card-text">Categoria: {{ item[2] }}</div>
+                    <div class="card-price">Preço: ${{ item[3] }}</div>
+                    <form action="{{ url_for('remover_item', item_index=carrinho_compras.index(item)) }}" method="post">
+                        <button type="submit">Remover</button>
+                    </form>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>O seu carrinho está vazio.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

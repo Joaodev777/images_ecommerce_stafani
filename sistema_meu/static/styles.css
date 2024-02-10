@@ -1,0 +1,524 @@
+@import url('https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap');
+
+.sidebar {
+    width: 250px;
+    /* box-shadow: rgba(42, 42, 46, 0.2) 0px 7px 29px 0px; */
+    padding: 15px;
+    height: 95vh;
+    position: fixed;
+    margin-left: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: rgb(38, 38, 38);
+    border-radius: 15px;
+    color: white;
+}
+
+body::-webkit-scrollbar {
+    width: 12px;
+}
+
+body::-webkit-scrollbar-thumb {
+    /* background-color: #2600ff; Cor da barra de rolagem */
+    background-color: #2600ff; 
+    border-radius: 10px; /* Borda arredondada da barra de rolagem */
+    border: 4px solid #050022; /* Borda da barra de rolagem */
+}
+
+body::-webkit-scrollbar-track {
+    background-color: transparent; /* Cor do plano de fundo da barra de rolagem */
+}
+
+.title {
+    font-family: 'Lilita One', sans-serif;
+    font-size: 30px;
+    color: #00d79e;
+    text-align: center;
+    margin-left: auto;
+    justify-content: center;
+    display: flex;
+}
+
+.icon-side {
+    background-image: linear-gradient(45deg, #00d79e, #8000ff);
+    padding: 5px;
+    font-size: 25px;
+    border-radius: 7px;
+    margin-left: auto;
+    margin-left: 10px;
+}
+
+.links_nav {
+    align-items: center;
+}
+
+.links_nav span {
+    align-items: center;
+    margin-left: 20px;
+    font-size: 18px;
+}
+
+.side-nav {
+    width: 100%;
+    height: 50px;
+    background-color: rgb(28, 1, 79);
+    justify-content: center;
+    position: fixed;
+    top: 0;
+}
+
+.main {
+    margin-top: 30px;
+    color: black;
+    padding-top: 45px;
+    justify-content: center;
+    display: flex;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    flex-direction: column;
+}
+
+.header {
+    text-align: center;
+    border-bottom: 1px #00ffbf solid;
+}
+
+.header {
+    font-family: 'Black Ops One', system-ui;
+    font-size: 50px;
+    background: linear-gradient(to top, #00ff91, #00ff91, #00c3ff);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.card_pricing {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    /* background-color: #00d79e; */
+    padding: 17px;
+    height: 105px;
+    width: 110px;
+    text-align: center;
+}
+
+/* .card_pricing:nth-child(2){
+    background-color: red;
+} */
+/* .card_pricing svg{
+    background:linear-gradient(45deg, #00ffbf,  rgb(86, 1, 255));
+} */
+.circle-background {
+    background: #00ffbf;
+}
+
+.gradient-text {
+    fill: url(#grad);
+    font-family: Arial, sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    text-anchor: middle;
+    dominant-baseline: middle;
+}
+
+svg {
+    background-color: none;
+}
+
+.buttons_positions {
+    position: fixed;
+    right: 15px;
+    left: 96%;
+    top: 73%;
+}
+
+.button_position {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 5%;
+    margin-bottom: 15PX;
+}
+
+.button_position:nth-child(3) {
+    background-color: #00d79e81;
+    border: 1px solid #00d79e;
+    color: white;
+}
+
+.button_position:nth-child(1) {
+    background-color: #d400ff74;
+    border: 1px solid #d400ff;
+    color: white;
+}
+
+.button_position:nth-child(2) {
+    background-color: #00c8faaf;
+    border: 1px solid #00c8fa;
+    color: white;
+}
+
+.d-flex {
+    display: flex;
+}
+
+/* Estilização da tabela */
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 18px;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.styled-table thead th {
+    background-color: #050022;
+    color: white;
+}
+
+.card {
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+    width: 150px;
+    margin-top: 15px;
+    cursor: grab;
+}
+
+.card h2 {
+    font-size: 24px;
+    margin: 10px 0;
+    color: #fff;
+}
+
+.card p {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #b3b3b3;
+}
+
+.card.revenue {
+    border-top: 5px solid #00ff91;
+}
+
+.card.expenses {
+    border-top: 5px solid #ff0040;
+}
+
+.card.total {
+    border-top: 5px solid #5900ff;
+}
+
+.gradient-text {
+    fill: url(#grad);
+    font-family: 'Arial', sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    text-anchor: middle;
+    dominant-baseline: middle;
+}
+
+
+#keywords {
+    font-size: 15px;
+    margin-top: 35px;
+    width: 100%;
+}
+
+
+#keywords thead {
+    cursor: pointer;
+    background: #00ff91;
+}
+
+#keywords thead tr th {
+    font-weight: bold;
+    padding: 12px 30px;
+    padding-left: 42px;
+    text-align: center;
+
+    border-bottom: 1px solid #00d79e;
+
+}
+
+#keywords thead tr th span {
+    padding-right: 20px;
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    text-align: center;
+
+}
+
+
+
+#keywords thead tr th.headerSortUp span {
+    background-image: url('https://i.imgur.com/SP99ZPJ.png');
+}
+
+#keywords thead tr th.headerSortDown span {
+    background-image: url('https://i.imgur.com/RkA9MBo.png');
+}
+
+
+#keywords tbody tr {
+    color: #ffffff;
+    font-family: 'Protest Riot', sans-serif;
+
+}
+
+#keywords tbody tr td {
+    text-align: center;
+    padding: 15px 10px;
+    border-bottom: 1px solid #5900ff;
+    text-align: center;
+    justify-content: center;
+    
+}
+
+
+#keywords tbody tr td.lalign {
+    text-align: left;
+}
+
+
+/* Modais */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #050022;
+    border-radius: 15px;
+    padding: 20px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+/* Form Styles */
+.modal-content-big{
+    background: linear-gradient(45deg, rgb(0, 55, 72), rgb(1, 0, 1));
+    border-radius: 15px;
+    padding: 20px;
+    max-width: 1100px; /* Fixed width for better consistency */
+    text-align: left;
+    height: 550px;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+.modal h2 {
+    color: #00d79e;
+}
+
+.modal label {
+    display: block;
+    margin: 10px 0;
+    color: #fff;
+}
+.number_cell input, select {
+    outline:#7300d7;
+}
+.modal input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px;
+    box-sizing: border-box;
+    border: 1px solid #00d79e;
+    border-radius: 5px;
+    background-color: #050022;
+    color: white;
+}
+
+.modal button {
+    padding: 10px 15px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal .mb-3{
+    margin-left: auto;
+}
+.modal-close-button {
+    background-color: #d400ff;
+    color: white;
+}
+
+.modal-save-button {
+    background-color: #00c8faaf;
+    color: white;
+}
+
+.btn_modal {
+    height: 40px;
+    width: 150px;
+    margin-left: 25px;
+    background-color: #4c00ff;
+    color: white;
+    font-size: 20px;
+}
+.overflow-cell {
+    max-width: 150px; /* Defina a largura máxima conforme necessário */
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+}
+.overflow-cell::-webkit-scrollbar {
+    width: 12px;
+}
+
+.overflow-cell::-webkit-scrollbar-thumb {
+    background-color: #2600ff; /* Cor da barra de rolagem */
+    border-radius: 10px; /* Borda arredondada da barra de rolagem */
+    border: 4px solid #050022; /* Borda da barra de rolagem */
+}
+
+.overflow-cell::-webkit-scrollbar-track {
+    background-color: transparent; /* Cor do plano de fundo da barra de rolagem */
+}
+.button_trash{
+    height: 40px;
+    width: 40px;
+    background-color: rgb(255, 0, 0);
+    border: none;
+    border-radius: 5px;
+    font-size: 25px;
+    cursor: pointer;
+
+}
+.button_edit{
+    height: 40px;
+    width: 40px;
+    background-color: #00e1ffa7;
+    border: 3px solid #00ccff;
+    color: white;
+    border-radius: 5px;
+    font-size: 25px;
+    cursor: pointer;
+}
+.form-control{
+    width: 25vh;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    border: none;
+}
+
+
+/* Form Styles */
+.modal-content {
+    background: #050022;
+    border-radius: 15px;
+    padding: 20px;
+    max-width: 400px; /* Fixed width for better consistency */
+    width: 100%;
+    text-align: left;
+}
+
+.modal h2 {
+    color: #00d79e;
+    font-size: 20px; /* Adjusted font size */
+}
+
+.modal label {
+    display: block;
+    margin: 10px 0; /* Adjusted margin for better spacing */
+    color: #fff;
+    font-size: 14px; /* Adjusted font size */
+}
+
+.modal input,
+.modal select {
+    width: 200px;
+    padding: 10px; /* Fixed padding */
+    margin: 5px 0 10px; /* Adjusted margin */
+    box-sizing: border-box;
+    border: 1px solid #00d79e;
+    border-radius: 5px;
+    background-color: #050022;
+    color: white;
+}
+
+/* Added styling for select element */
+.modal select {
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23FFFFFF" height="24" width="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-position: right 10px center;
+    background-repeat: no-repeat;
+}
+
+/* Adjusted button styling */
+.modal button {
+    padding: 10px 15px; /* Fixed padding */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal-close-button {
+    background-color: #d400ff;
+    color: white;
+}
+
+.modal-save-button {
+    background-color: #00c8faaf;
+    color: white;
+}
+
+.icon_active{
+    background-image: linear-gradient(45deg, #00d79e, #00d79e);
+
+}
+
+.positive {
+    background-color: #00ff00; /* Verde para saldo positivo */
+}
+
+.negative {
+    background: linear-gradient(to right, #ff0000, #8c00ff); /* Gradiente de vermelho para roxo para saldo negativo */
+}
+
+.zero {
+    background-color: #8c00ff; /* Roxo para saldo zero */
+}
+.icon-container {
+    display: flex;
+    align-items: center;
+}
+
+.icon-title {
+    margin-left: 8px; /* Ajuste conforme necessário */
+}

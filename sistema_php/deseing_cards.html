@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root{
+            --primary-trans: #891affa7;
+            --primary: #891afrgb(137, 26, 255)
+
+        }
+        li{
+            display: flex;
+            border: 1px solid var(--primary);
+            padding: 5px;
+            border-bottom: none;
+        }
+        li button{
+            border:2px solid var(--primary);
+            background-color: var(--primary-trans);
+            border-radius:5px ;
+        }
+    </style>
+</head>
+<body>
+        <li>
+            <h3>{{ product[1] }}</h2>
+            <p><strong>Categoria:</strong> {{ product[2] }}</p>
+            <p><strong>Preço:</strong> R$ {{ product[3] }}</p>
+            <p><strong>Quantidade:</strong> {{ product[4] }}</p>
+            {% if product[5] %}
+                <img src="{{ url_for('static', filename='images/' + product[5]) }}" alt="{{ product[1] }}">
+            {% else %}
+                <p>Nenhuma imagem disponível</p>
+            {% endif %}
+            <!-- Adicionar botão de exclusão -->
+            <form action="{{ url_for('delete_product') }}" method="post">
+                <input type="hidden" name="product_id" value="{{ product[0] }}">
+                <button type="submit">Excluir</button>
+            </form>
+        </li>
+
+</body>
+</html>

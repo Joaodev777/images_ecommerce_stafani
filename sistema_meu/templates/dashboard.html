@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transações JGByte</title>
+    <link rel="stylesheet" href="static/styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #050022;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+        }
+
+        a {
+            color: white;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <nav class="side-nav d-flex" style="flex-direction: row;">
+
+        <div class="d-flex links_nav ">
+            <a href="{{ url_for('index') }}" title="DashBoard">
+                <i class='bx bxs-objects-horizontal-left icon-side icon_active'></i>
+            </a>
+        </div>
+
+        <div class="d-flex links_nav ">
+            <a href="{{ url_for('tabela') }}" title="Transações">
+                <i class='bx bxs-bank icon-side'></i>
+            </a>
+        </div>
+
+        <div class="d-flex links_nav">
+            <a href="/pessoas_ou_empresas" title="Pessoas Ou Empresas">
+                <i class='bx bx-user-pin icon-side'></i>
+            </a>
+        </div>
+        <div class="d-flex links_nav">
+            <a href="/relatorios" title="Relatorios">
+                <i class='bx bx-file-find icon-side '></i>
+            </a>
+        </div>
+        <div class="d-flex links_nav">
+            <a href="/tarefas" title="Tarefas">
+                <i class='bx bx-list icon-side '></i>
+            </a>
+        </div>
+
+    </nav>
+    <div class="main">
+
+        <!-- BOTOES -->
+
+<!-- Adicione este conteúdo dentro do seu formulário principal -->
+<div class="buttons_positions">
+    <button class="button_position" title="Exportar Transações"><i class='bx bx-export'></i></button>
+    <button class="button_position" title="Filtrar" onclick="openFilterModal()"><i class='bx bx-search'></i></button>
+    <button class="button_position" title="Adicionar Transação" onclick="openModal()"><i class='bx bx-plus-medical'></i></button>
+
+</div>
+
+
+        <!-- BOTOES FINISH -->
+
+        <div class="container text-light">
+            <br>
+            <div class="header" style="font-family: 'Black Ops One', system-ui;font-size: 50px;">
+               DashBoard
+            </div>
+            <div class="d-flex" style="justify-content: center;display: flex;">
+                <div class="card revenue">
+                    <svg version="1.1" style="height: 155px;" id="L1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100"
+                        enable-background="new 0 0 100 100" xml:space="preserve">
+                        <!-- Background Rect -->
+                        <rect width="100%" height="100%" fill="#050022" />
+
+                        <!-- Animated Circle -->
+                        <circle fill="none" stroke="#fff" stroke-width="6" stroke-miterlimit="15"
+                            stroke-dasharray="14.2472,14.2472" cx="50" cy="50" r="47">
+                            <animateTransform attributeName="transform" attributeType="XML" type="rotate" dur="5s"
+                                from="0 50 50" to="360 50 50" repeatCount="indefinite" />
+                        </circle>
+
+                        <!-- Inner Circle -->
+                        <circle fill="none" stroke="#fff" stroke-width="1" stroke-miterlimit="10"
+                            stroke-dasharray="10,10" cx="50" cy="50" r="39">
+                            <animateTransform attributeName="transform" attributeType="XML" type="rotate" dur="5s"
+                                from="0 50 50" to="-360 50 50" repeatCount="indefinite" />
+                        </circle>
+
+                        <!-- Bouncing Rectangles -->
+                        <g fill="#00ffbf">
+                            <rect x="30" y="35" width="5" height="30">
+                                <animateTransform attributeName="transform" dur="1s" type="translate"
+                                    values="0 5 ; 0 -5; 0 5" repeatCount="indefinite" begin="0.1" />
+                            </rect>
+                            <rect x="40" y="35" width="5" height="30">
+                                <animateTransform attributeName="transform" dur="1s" type="translate"
+                                    values="0 5 ; 0 -5; 0 5" repeatCount="indefinite" begin="0.2" />
+                            </rect>
+                            <rect x="50" y="35" width="5" height="30">
+                                <animateTransform attributeName="transform" dur="1s" type="translate"
+                                    values="0 5 ; 0 -5; 0 5" repeatCount="indefinite" begin="0.3" />
+                            </rect>
+                            <rect x="60" y="35" width="5" height="30">
+                                <animateTransform attributeName="transform" dur="1s" type="translate"
+                                    values="0 5 ; 0 -5; 0 5" repeatCount="indefinite" begin="0.4" />
+                            </rect>
+                            <rect x="70" y="35" width="5" height="30">
+                                <animateTransform attributeName="transform" dur="1s" type="translate"
+                                    values="0 5 ; 0 -5; 0 5" repeatCount="indefinite" begin="0.5" />
+                            </rect>
+                        </g>
+
+                        <!-- Gradient Text -->
+                        <text class="gradient-text" x="50" y="50">Receitas</text>
+                    </svg>
+                    <h2>Receitas</h2>
+                    <p>R$150,00</p>
+
+                </div>
+
+                <div class="card expenses">
+                    <svg version="1.1" style="height: 155px;" id="L1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100"
+                        enable-background="new 0 0 100 100" xml:space="preserve">
+                        <!-- Background Rect -->
+                        <rect width="100%" height="100%" fill="#050022" />
+
+                        <!-- Animated Circle -->
+                        <circle fill="none" stroke="#fff" stroke-width="6" stroke-miterlimit="15"
+                            stroke-dasharray="14.2472,14.2472" cx="50" cy="50" r="47">
+                            <animateTransform attributeName="transform" attributeType="XML" type="rotate" dur="5s"
+                                from="0 50 50" to="360 50 50" repeatCount="indefinite" />
+                        </circle>
+
+                        <!-- Inner Circle -->
+                        <circle fill="none" stroke="#fff" stroke-width="1" stroke-miterlimit="10"
+                            stroke-dasharray="10,10" cx="50" cy="50" r="39">
+                            <animateTransform attributeName="transform" attributeType="XML" type="rotate" dur="5s"
+                                from="0 50 50" to="-360 50 50" repeatCount="indefinite" />
+                        </circle>
+
+                        <!-- Bouncing Rectangles -->
+                        <g fill="#ff0044">
+                            <rect x="30" y="35" width="5" height="30">
+                                <animateTransform attributeName="transform" dur="1s" type="translate"
+                                    values="0 5 ; 0 -5; 0 5" repeatCount="indefinite" begin="0.1" />
+                            </rect>
+                            <rect x="40" y="35" width="5" height="30">
+                                <animateTransform attributeName="transform" dur="1s" type="translate"
+                                    values="0 5 ; 0 -5; 0 5" repeatCount="indefinite" begin="0.2" />
+                            </rect>
+                            <rect x="50" y="35" width="5" height="30">
+                                <animateTransform attributeName="transform" dur="1s" type="translate"
+                                    values="0 5 ; 0 -5; 0 5" repeatCount="indefinite" begin="0.3" />
+                            </rect>
+                            <rect x="60" y="35" width="5" height="30">
+                                <animateTransform attributeName="transform" dur="1s" type="translate"
+                                    values="0 5 ; 0 -5; 0 5" repeatCount="indefinite" begin="0.4" />
+                            </rect>
+                            <rect x="70" y="35" width="5" height="30">
+                                <animateTransform attributeName="transform" dur="1s" type="translate"
+                                    values="0 5 ; 0 -5; 0 5" repeatCount="indefinite" begin="0.5" />
+                            </rect>
+                        </g>
+
+                        <!-- Gradient Text -->
+                        <text class="gradient-text" x="50" y="50">Receitas</text>
+                    </svg>
+                    <h2>Despesas</h2>
+                    <p>R$150,00</p>
+                </div>
+
+                <div class="card total">
+                    <svg version="1.1" style="height: 155px;" id="L1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100"
+                        enable-background="new 0 0 100 100" xml:space="preserve">
+                        <!-- Background Rect -->
+                        <rect width="100%" height="100%" fill="#050022" />
+
+                        <!-- Animated Circle -->
+                        <circle fill="none" stroke="#fff" stroke-width="6" stroke-miterlimit="15"
+                            stroke-dasharray="14.2472,14.2472" cx="50" cy="50" r="47">
+                            <animateTransform attributeName="transform" attributeType="XML" type="rotate" dur="5s"
+                                from="0 50 50" to="360 50 50" repeatCount="indefinite" />
+                        </circle>
+
+                        <!-- Inner Circle -->
+                        <circle fill="none" stroke="#fff" stroke-width="1" stroke-miterlimit="10"
+                            stroke-dasharray="10,10" cx="50" cy="50" r="39">
+                            <animateTransform attributeName="transform" attributeType="XML" type="rotate" dur="5s"
+                                from="0 50 50" to="-360 50 50" repeatCount="indefinite" />
+                        </circle>
+
+                        <!-- Bouncing Rectangles -->
+                        <g fill="#8c00ff">
+                            <rect x="30" y="35" width="5" height="30">
+                                <animateTransform attributeName="transform" dur="1s" type="translate"
+                                    values="0 5 ; 0 -5; 0 5" repeatCount="indefinite" begin="0.1" />
+                            </rect>
+                            <rect x="40" y="35" width="5" height="30">
+                                <animateTransform attributeName="transform" dur="1s" type="translate"
+                                    values="0 5 ; 0 -5; 0 5" repeatCount="indefinite" begin="0.2" />
+                            </rect>
+                            <rect x="50" y="35" width="5" height="30">
+                                <animateTransform attributeName="transform" dur="1s" type="translate"
+                                    values="0 5 ; 0 -5; 0 5" repeatCount="indefinite" begin="0.3" />
+                            </rect>
+                            <rect x="60" y="35" width="5" height="30">
+                                <animateTransform attributeName="transform" dur="1s" type="translate"
+                                    values="0 5 ; 0 -5; 0 5" repeatCount="indefinite" begin="0.4" />
+                            </rect>
+                            <rect x="70" y="35" width="5" height="30">
+                                <animateTransform attributeName="transform" dur="1s" type="translate"
+                                    values="0 5 ; 0 -5; 0 5" repeatCount="indefinite" begin="0.5" />
+                            </rect>
+                        </g>
+
+                        <!-- Gradient Text -->
+                        <text class="gradient-text" x="50" y="50">Receitas</text>
+                    </svg>
+                    <h2>Saldo Total</h2>
+                    <p>R$150,00</p>
+                </div>
+            </div>
+            <br>
+
+
+
+
+
+        </div>
+
+        <table id="keywords" cellspacing="0" cellpadding="0">
+            <thead>
+                <tr>
+                    <th><span>Nome</span></th>
+                    <th><span>Tipo</span></th>
+                    <th><span>Valor</span></th>
+                    <th><span>Data lanc</span></th>
+                    <th><span>Observação</span></th>
+                    <th><span>Referente</span></th>
+                    <th><span>Forma de Pag.</span></th>
+                    <th><span>Ação</span></th>
+
+
+
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td class="lalign">Pagamento do Link</td>
+                    <td> 
+                        DESPESA
+                    </td>
+                    <td>R$27.000</td>
+                    <td>27/01/2024</td>
+                    <td class="overflow-cell">Valor Auto Pela Negociação de falta de pagamento do MCD</td>
+                    <td>Pagamento do Link</td>
+                    <td>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path fill="#00d79e" d="M242.4 292.5C247.8 287.1 257.1 287.1 262.5 292.5L339.5 369.5C353.7 383.7 372.6 391.5 392.6 391.5H407.7L310.6 488.6C280.3 518.1 231.1 518.1 200.8 488.6L103.3 391.2H112.6C132.6 391.2 151.5 383.4 165.7 369.2L242.4 292.5zM262.5 218.9C256.1 224.4 247.9 224.5 242.4 218.9L165.7 142.2C151.5 127.1 132.6 120.2 112.6 120.2H103.3L200.7 22.76C231.1-7.586 280.3-7.586 310.6 22.76L407.8 119.9H392.6C372.6 119.9 353.7 127.7 339.5 141.9L262.5 218.9zM112.6 142.7C126.4 142.7 139.1 148.3 149.7 158.1L226.4 234.8C233.6 241.1 243 245.6 252.5 245.6C261.9 245.6 271.3 241.1 278.5 234.8L355.5 157.8C365.3 148.1 378.8 142.5 392.6 142.5H430.3L488.6 200.8C518.9 231.1 518.9 280.3 488.6 310.6L430.3 368.9H392.6C378.8 368.9 365.3 363.3 355.5 353.5L278.5 276.5C264.6 262.6 240.3 262.6 226.4 276.6L149.7 353.2C139.1 363 126.4 368.6 112.6 368.6H80.78L22.76 310.6C-7.586 280.3-7.586 231.1 22.76 200.8L80.78 142.7H112.6z"/></svg>
+                    </td>
+                    <td>
+                        <button class="button_trash" title="Clique para excluir">
+                            <i class='bx bx-trash-alt'></i>
+                        </button>
+                    </td>
+                </tr>
+
+
+            </tbody>
+        </table>
+
+
+    </div>
+
+<!-- SCRIPTS -->
+<script>
+    function openModal() {
+        document.getElementById('addTransactionModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+        document.getElementById('addTransactionModal').style.display = 'none';
+    }
+
+    function openFilterModal() {
+        document.getElementById('filterModal').style.display = 'flex';
+    }
+
+    function closeFilterModal() {
+        document.getElementById('filterModal').style.display = 'none';
+    }
+
+    // Close modais ao clicar fora da área do modal
+    window.onclick = function (event) {
+        if (event.target.classList.contains('modal')) {
+            event.target.style.display = 'none';
+        }
+    };
+</script>
+
+
+<!-- MODAIS -->
+<!-- Adicione este conteúdo no modal para adicionar transações -->
+<div id="addTransactionModal" class="modal">
+    <div class="modal-content">
+        <span class="close-button" onclick="closeModal()">&times;</span>
+        <h2>Adicionar Transação</h2>
+        <form id="addTransactionForm" action="/adicionar_transacao" method="post">
+            <div class="row d-flex">
+                <div class="mb-3">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome_transacao" name="nome">
+                </div>
+                <div class="mb-3">
+                    <label for="nome">Tipo:</label>
+                    <select name="tipo_transacao" class="form-control" id="tipo_transacao">
+                        <option value=""></option>
+                        <option value="Despesa">Desepesa</option>
+                        <option value="Receita">Receita</option>
+                        <option value="Anotação">Anotação</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row d-flex">
+                <div class="mb-3">
+                    <label for="nome">Valor:</label>
+                    <input type="number" id="valor_transacao" name="valor_transacao">
+                </div>
+                <div class="mb-3">
+                    <label for="nome">Observação:</label>
+                    <input type="text" id="observacao_transacao" name="observacao_transacao">
+                </div>
+            </div>
+            <div class="row d-flex">
+                <div class="mb-3">
+                    <label for="nome">Data de lanc.:</label>
+                    <input type="date" id="data_lancamento" name="data_lancamento">
+                </div>
+                <div class="mb-3">
+                    <label for="nome">Pagamento Referente a:</label>
+                    <input type="text" id="referente_transacao" name="referente_transacao">
+                </div>
+            </div>
+            <div class="row d-flex">
+                <div class="mb-3">
+                    <label for="form_pag">Forma de Recb/Pagm.</label>
+                    <select name="form_pag" class="form-control" id="form_pag">
+                        <option value=""></option>
+                        <option value="PIX">Pix</option>
+                        <option value="Cartão">Cartão</option>
+                        <option value="Boleto">Boleto</option>
+                        <option value="Cheque">Cheque</option>
+                        <option value="Dinheiro">Dinheiro</option>
+
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <br>
+                    <br>
+                    <button class="btn_modal" type="submit" title="Clique para Adicionar">Adicionar </button>
+
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Adicione este conteúdo no modal para filtrar transações -->
+<div id="filterModal" class="modal">
+    <div class="modal-content">
+        <h2>Filtrar Transações</h2>
+        <span class="close-button" onclick="closeFilterModal()">&times;</span>
+
+        <form id="filterTransactionForm">
+            <div class="row d-flex">
+                <div class="mb-3">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome">
+                </div>
+                <div class="mb-3">
+                    <label for="nome">Tipo:</label>
+                    <select name="tipo_transacao" class="form-control" id="tipo_transacao">
+                        <option value=""></option>
+                        <option value="Despesa">Desepesa</option>
+                        <option value="Receita">Receita</option>
+                        <option value="Anotação">Anotação</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row d-flex">
+                <div class="mb-3">
+                    <label for="nome">Valor:</label>
+                    <input type="number" id="valor_transacao" name="valor_transacao">
+                </div>
+                <div class="mb-3">
+                    <label for="nome">Observação:</label>
+                    <input type="text" id="observacao_transacao" name="observacao_transacao">
+                </div>
+            </div>
+            <div class="row d-flex">
+                <div class="mb-3">
+                    <label for="nome">Data de lanc.:</label>
+                    <input type="date" id="data_lancamento" name="data_lancamento">
+                </div>
+                <div class="mb-3">
+                    <label for="nome">Pagamento Referente a:</label>
+                    <input type="text" id="nome" name="nome">
+                </div>
+            </div>
+            <div class="row d-flex">
+                <div class="mb-3">
+                    <label for="nome">Forma de Recb/Pagm.</label>
+                    <select name="tipo_transacao" class="form-control" id="tipo_transacao">
+                        <option value=""></option>
+                        <option value="PIX">Pix</option>
+                        <option value="Cartão">Cartão</option>
+                        <option value="Boleto">Boleto</option>
+                        <option value="Cheque">Cheque</option>
+                        <option value="Dinheiro">Dinheiro</option>
+
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <br>
+                    <br>
+                    <button class="btn_modal" type="submit" title="Clique para Filtrar">Filtrar </button>
+
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+</body>
+
+</html>

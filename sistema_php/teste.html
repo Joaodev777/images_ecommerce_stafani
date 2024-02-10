@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Adicionar Produto</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <style>
+        :root{
+            --primary-trans: #891affc6;
+            --primary: #891afrgb(137, 26, 255)
+
+        }
+        table{
+            border: 1px solid var(--primary);
+            border:none;
+        }
+        tr, td{
+            border:none;
+        }
+        table button{
+            border:2px solid var(--primary);
+            background-color: var(--primary-trans);
+            border-radius:5px ;
+        }
+        table img{
+            height:50px;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="number"],
+        input[type="file"],
+        button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Adicionar Produto</h1>
+    <form action="/" method="post" enctype="multipart/form-data">
+        <label for="name">Nome:</label><br>
+        <input type="text" id="name" name="name" required><br>
+        <label for="category">Categoria:</label><br>
+        <input type="text" id="category" name="category" required><br>
+        <label for="price">Preço:</label><br>
+        <input type="number" id="price" name="price" step="0.01" required><br>
+        <label for="quantity">Quantidade:</label><br>
+        <input type="number" id="quantity" name="quantity" min="1" value="1" required><br>
+        <label for="image">Imagem:</label><br>
+        <input type="file" id="image" name="image">
+        <h4>Suporta os formatos: <span style="color:red">png, jpg, jpeg, gif</span></h4><br>
+                <button type="submit">Adicionar Produto</button>
+    </form>
+    <br>
+    <table class="table">
+
+        <tbody>
+            {% for product in products %}
+            <tr>
+                <td>
+                    {% if product[5] %}
+                        <img style="height:50px" src="{{ url_for('static', filename='images/' + product[5]) }}" alt="{{ product[1] }}" class="img-fluid">
+                    {% else %}
+                        Nenhuma imagem disponível
+                    {% endif %}
+                </td>
+                <td>{{ product[1] }}</td>
+                <td>{{ product[2] }}</td>
+                <td>R$ {{ product[3] }}</td>
+                <td>{{ product[4] }}</td>
+                <td>
+                    <form action="{{ url_for('delete_product') }}" method="post">
+                        <input type="hidden" name="product_id" value="{{ product[0] }}">
+                        <button type="submit" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    
+    
+    
+</body>
+</html>
